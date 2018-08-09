@@ -31,6 +31,14 @@ function drawPlayer(p){
         
     fill(colors[p.colorIndex]);
     ellipse(coord.x,coord.y,gridSize /2);
+
+    addParticle(
+        coord.x,coord.y, // x,  y
+        Math.random(),Math.random(), // dx, dy
+        0,0.05,     // ddx,ddy
+        100,     // life
+        4        // colorIndex
+    );
 }
 
 function drawBoard(){
@@ -89,14 +97,14 @@ addParticle(
     0,0.01,     // ddx,ddy
     100,     // life
     4        // colorIndex
-)
+);
 
 function drawParticles(){
     let i = particles.length;
     while(i--){
         let p = particles[i];
 
-        fill(colors[p.colorIndex]);
+        fill("white");
         ellipse(p.x, p.y, p.life / 10);
 
         // change the position
@@ -109,10 +117,7 @@ function drawParticles(){
         p.life += -1;
 
         if (p.life == 0) {
-            particles.slice(i,i + 1);
+            particles.splice(i,1);
         }
-
-
-
     }
 }
