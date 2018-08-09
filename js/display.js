@@ -34,7 +34,7 @@ function drawPlayer(p){
 
     addParticle(
         coord.x,coord.y, // x,  y
-        Math.random(),Math.random(), // dx, dy
+        Math.random() - 0.5,Math.random() - 0.5, // dx, dy
         0,0.05,     // ddx,ddy
         100,     // life
         4        // colorIndex

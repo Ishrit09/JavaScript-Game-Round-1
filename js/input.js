@@ -30,6 +30,11 @@ function moveEnemy() {
         else
             game.enemy.r += -1; // move to the left
 
+
+
+
+    
+
     pacman(game.enemy);
     calculateScore();
 }
